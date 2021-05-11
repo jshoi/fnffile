@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_VqC_IGXqEeuhFpGsQLsBaA" targetNamespace="http://tns.tibco.com/bw/composite/EAI_RestTypeFILE" name="EAI_RestTypeFILE" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_XO9LoqywEeuvf4Lr0H6zbA" name="sap-procMergetData" promote="ComponentSAP_SHER_ONL/sap-procMergetData">
+    <sca:interface.wsdl xmi:id="_XO9LpqywEeuvf4Lr0H6zbA" interface="http://xmlns.example.com/20210323100046PLT#wsdl.interface(sap-procMergetData)" scaext:wsdlLocation="../Processes/com/fnf/eai/sap/sher/rest/SAP_SHER_ONL.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_on4w4KyxEeuvf4Lr0H6zbA" name="RestService" path="/sap-procmergetdata" docBasePath="http://localhost:7777/EAI_RestTypeFILE" docResourcePath="Resource" connector="com.fnf.eai.resources.http.server.eai.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" policySets="com.fnf.eai.resources.policy.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+      <operation xmi:id="_ooJPkKyxEeuvf4Lr0H6zbA" operationName="post" nickname="createItem" httpMethod="POST" notes="Create a new item"/>
+      <clientFormat>JSON</clientFormat>
+      <advancedConfig xmi:id="_on4w4ayxEeuvf4Lr0H6zbA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_ooJPkayxEeuvf4Lr0H6zbA" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_VyyrcGXqEeuhFpGsQLsBaA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Vy2V0GXqEeuhFpGsQLsBaA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Vy284GXqEeuhFpGsQLsBaA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Vy3j8GXqEeuhFpGsQLsBaA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Vy4LAGXqEeuhFpGsQLsBaA" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Vy4yEGXqEeuhFpGsQLsBaA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Vy6AMGXqEeuhFpGsQLsBaA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Vy6nQGXqEeuhFpGsQLsBaA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Vy7OUGXqEeuhFpGsQLsBaA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_C04agGXrEeuhFpGsQLsBaA" name="/COMMON/LOG_LEVEL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_FsSsgGXrEeuhFpGsQLsBaA" name="/COMMON/ENV" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_C5OvAGXrEeuhFpGsQLsBaA" name="/DB_INFO/MAX_ROW" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_GrsUAGXrEeuhFpGsQLsBaA" name="/DB_INFO/SUBSET_SIZE" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_GvM7AGXrEeuhFpGsQLsBaA" name="/DB_INFO/TIME_OUT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_WnO98KyoEeu2Jsqp8Vqw8Q" name="/DB_INFO/MAX_ROW_LONG" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Ifz9AGXrEeuhFpGsQLsBaA" name="/EAI_INFO/JMS/URL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_JhSoIGXrEeuhFpGsQLsBaA" name="/EAI_INFO/JMS/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_JlZFAGXrEeuhFpGsQLsBaA" name="/EAI_INFO/JMS/PASSWORD" type="property:password" scaext:simpleValue="#!pzvm8m5XnBvLJSRNWm2erQ==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_BWirwH_rEeugvYqiQ83wFA" name="/SAP_INFO/hostname" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_8g7kYJdnEeux5rX4TEQ_ZQ" name="/SAP_INFO/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_QXXIsJjbEeuIDe1g2zPgvw" name="/SAP_INFO/username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_QgMUkJjbEeuIDe1g2zPgvw" name="/SAP_INFO/password" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_kDgl0Iw7Eeubae-_U3cyPQ" name="/SAP_INFO/FTP/username" type="XMLSchema:string" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2BnxMIw7Eeubae-_U3cyPQ" name="/SAP_INFO/FTP/password" type="property:password" scaext:simpleValue="#!gBSj9ApA1Nb6oZHiHxST5w==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sfs2cIt0EeuTWOnHHUprNw" name="/SHER_INFO/loginhostname" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_WiMggIt4Eeubae-_U3cyPQ" name="/SHER_INFO/hostname" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_zWtHgIuVEeubae-_U3cyPQ" name="/SHER_INFO/AppInfo/grant_type" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0-rK4IuVEeubae-_U3cyPQ" name="/SHER_INFO/AppInfo/client_id" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1Al2cIuVEeubae-_U3cyPQ" name="/SHER_INFO/AppInfo/client_secret" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1Rq_YIuVEeubae-_U3cyPQ" name="/SHER_INFO/AppInfo/resource" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Ze4_gIuWEeubae-_U3cyPQ" name="/SHER_INFO/AppInfo/resourcePath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gg4FcIufEeubae-_U3cyPQ" name="/SHER_INFO/TargetDrives/TFTMDT" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_So8P0IugEeubae-_U3cyPQ" name="/SHER_INFO/TargetDrives/resourcePath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_XO8kkKywEeuvf4Lr0H6zbA" name="ComponentSAP_SHER_ONL" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_XO8kkaywEeuvf4Lr0H6zbA" processName="com.fnf.eai.sap.sher.rest.SAP_SHER_ONL"/>
+    <sca:service xmi:id="_XO9LoKywEeuvf4Lr0H6zbA" name="sap-procMergetData">
+      <sca:interface.wsdl xmi:id="_XO9LoaywEeuvf4Lr0H6zbA" interface="http://xmlns.example.com/20210323100046PLT#wsdl.interface(sap-procMergetData)" scaext:wsdlLocation="../Processes/com/fnf/eai/sap/sher/rest/SAP_SHER_ONL.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_XPCEIKywEeuvf4Lr0H6zbA" name="ComponentSAP_SHER_ONL_0001_Starter" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_XPCEIaywEeuvf4Lr0H6zbA" processName="com.fnf.eai.sap.sher.rest.SAP_SHER_ONL_0001_Starter"/>
+  </sca:component>
+</sca:composite>
