@@ -419,5 +419,15 @@
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
+		<globalVariable>
+			<name>//EAI_RestTypeFILE///EAI_INFO/HTTP/hostname1</name>
+			<value>eai.fnf.co.kr</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+			<useLookupValue>false</useLookupValue>
+			<lookupValue>eai.fnf.co.kr</lookupValue>
+		</globalVariable>
 	</globalVariables>
 </repository>

@@ -27,6 +27,7 @@
   <sca:property xmi:id="_Ifz9AGXrEeuhFpGsQLsBaA" name="/EAI_INFO/JMS/URL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_JhSoIGXrEeuhFpGsQLsBaA" name="/EAI_INFO/JMS/USERNAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_JlZFAGXrEeuhFpGsQLsBaA" name="/EAI_INFO/JMS/PASSWORD" type="property:password" scaext:simpleValue="#!pzvm8m5XnBvLJSRNWm2erQ==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_5hsDILbDEeuwy9ua3obqNw" name="/EAI_INFO/HTTP/hostname1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_BWirwH_rEeugvYqiQ83wFA" name="/SAP_INFO/hostname" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_8g7kYJdnEeux5rX4TEQ_ZQ" name="/SAP_INFO/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_QXXIsJjbEeuIDe1g2zPgvw" name="/SAP_INFO/username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
