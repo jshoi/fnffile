@@ -9,7 +9,7 @@
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
-    "/sap-procmergetdata" : {
+    "/sap/procMergetData" : {
       "post" : {
         "summary" : "postSAP_SHER_ONL_0001",
         "description" : "Create a new item",
