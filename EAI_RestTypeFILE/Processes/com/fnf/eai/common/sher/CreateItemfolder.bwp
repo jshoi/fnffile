@@ -717,7 +717,7 @@
         <bpws:variable name="resourcePath" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes" type="xsd:string">
             <bpws:from>
-                <bpws:literal>/beta/sites/fnf365.sharepoint.com,2b104d53-5320-4cce-8ac9-46a6d48159f0,0ed5a8ef-ca98-4886-aade-9164eaf54b42/lists/eca1613c-3ec1-4eab-9bcd-0f05feefac0c/drive/root:/General/Dashboard:/children</bpws:literal>
+                <bpws:literal>/beta/sites/fnf365.sharepoint.com,feaaba43-59e3-40bc-8309-7237fb4746bb,51777e3b-e50f-4f08-af2f-c67d3dea9937/lists/a1e753d6-25ad-4e6c-9728-dfc66f60b860/drive/root:/General/Dashboard:/children</bpws:literal>
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns3:tokenResult" name="Start"
