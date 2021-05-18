@@ -186,7 +186,6 @@
                 <plnk:role name="use" portType="tns:sap-procMergetData"/>
             </plnk:partnerLinkType>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
-            <wsdl:import namespace="http://xmlns.example.com/Resource/parameters"/>
             <wsdl:message name="postRequest">
                 <wsdl:part name="item"
                     tibex:hasMultipleNamespaces="false" type="xsd:string"/>
@@ -204,7 +203,7 @@
                 <wsdl:part element="extns:server5XXError" name="serverError"/>
             </wsdl:message>
             <wsdl:portType name="sap-procMergetData"
-                tibex:bw.rest.apipath="/sap-procmergetdata"
+                tibex:bw.rest.apipath="/sap/procMergetData"
                 tibex:bw.rest.basepath="SAP_SHER_ONL_0001"
                 tibex:bw.rest.resource="Service Descriptors/com.fnf.eai.sap.sher.rest.SAP_SHER_ONL-Resource.json"
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
@@ -883,7 +882,6 @@
             namespace="http://xmlns.example.com/20210323100046PLT" prefix="tns"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/Resource/parameters"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="sap-procMergetData"
             partnerLinkType="ns:partnerLinkType" sca-bpel:ignore="false" sca-bpel:service="sap-procMergetData"/>
