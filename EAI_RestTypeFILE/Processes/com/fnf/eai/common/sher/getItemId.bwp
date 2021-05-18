@@ -944,10 +944,10 @@
         <bpws:variable element="ns3:tokenResult" name="Start"
             sca-bpel:internal="true" tibex:parameter="in"/>
         <bpws:variable element="ns4:ActivityInputClass"
-            name="ParseJSON-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:Item" name="ParseJSON" sca-bpel:internal="true"/>
+            name="ParseJSON_ItemID-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:Item" name="ParseJSON_ItemID" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:ActivityErrorData"
-            name="_error_ParseJSON" sca-bpel:internal="true"/>
+            name="_error_ParseJSON_ItemID" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:Item" name="End-input"
             sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable name="resourcePath" sca-bpel:hotUpdate="false"
@@ -995,14 +995,14 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension inputVariable="End-input"
-                    name="End" tibex:copyOf="ParseJSON"
+                    name="End" tibex:copyOf="ParseJSON_ItemID"
                     tibex:xpdlId="b488e306-9285-48c8-a4c8-9fc3d3daa6ec" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="SleepToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.example.org/SAP_SHER_ONL_0001_Request&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;xsl:copy-of select=&quot;$ParseJSON&quot;/>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON_ItemID&quot;/>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;xsl:copy-of select=&quot;$ParseJSON_ItemID&quot;/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1061,8 +1061,10 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="ParseJSON-input"
-                    name="ParseJSON" outputVariable="ParseJSON"
+                <tibex:activityExtension
+                    inputVariable="ParseJSON_ItemID-input"
+                    name="ParseJSON_ItemID"
+                    outputVariable="ParseJSON_ItemID"
                     tibex:xpdlId="8adb15a8-69ac-4f8d-91b0-411ad89cc3b3" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="SendHTTPRequestToEnd"/>
@@ -1140,7 +1142,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns1=&quot;http://www.example.org/SAP_SHER_ONL_0001_Request&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;getItemLogEnd-input&quot; match=&quot;/&quot;>&lt;tns3:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;$ParseJSON/tns1:value[1]/tns1:id&quot;/>&lt;/message>&lt;/tns3:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns1=&quot;http://www.example.org/SAP_SHER_ONL_0001_Request&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON_ItemID&quot;/>&#xa;    &lt;xsl:template name=&quot;getItemLogEnd-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;$ParseJSON_ItemID/tns1:value[1]/tns1:id&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns3:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

@@ -1166,10 +1166,11 @@
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns4:ActivityInputClass"
-            name="ParseJSON-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:SessionResult" name="ParseJSON" sca-bpel:internal="true"/>
+            name="ParseJSON_Session-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:SessionResult"
+            name="ParseJSON_Session" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:ActivityErrorData"
-            name="_error_ParseJSON" sca-bpel:internal="true"/>
+            name="_error_ParseJSON_Session" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:SessionResult" name="End-input"
             sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns6:ActivityInput"
@@ -1219,14 +1220,14 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension inputVariable="End-input"
-                    name="End" tibex:copyOf="ParseJSON"
+                    name="End" tibex:copyOf="ParseJSON_Session"
                     tibex:xpdlId="e1d470f2-7947-4ec6-85fb-99d73c3f72d0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="LogToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.example.org/SAP_SHER_ONL_0001_Request&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;xsl:copy-of select=&quot;$ParseJSON&quot;/>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON_Session&quot;/>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;xsl:copy-of select=&quot;$ParseJSON_Session&quot;/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1287,8 +1288,10 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="ParseJSON-input"
-                    name="ParseJSON" outputVariable="ParseJSON"
+                <tibex:activityExtension
+                    inputVariable="ParseJSON_Session-input"
+                    name="ParseJSON_Session"
+                    outputVariable="ParseJSON_Session"
                     tibex:xpdlId="072b2454-6287-48f3-b58e-3f9242db90eb" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="SendHTTPRequestToParseJSON"/>
@@ -1333,7 +1336,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns1=&quot;http://www.example.org/SAP_SHER_ONL_0001_Request&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;CreateSessionEnd-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;$ParseJSON/tns1:uploadUrl&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns1=&quot;http://www.example.org/SAP_SHER_ONL_0001_Request&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON_Session&quot;/>&#xa;    &lt;xsl:template name=&quot;CreateSessionEnd-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;$ParseJSON_Session/tns1:uploadUrl&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
