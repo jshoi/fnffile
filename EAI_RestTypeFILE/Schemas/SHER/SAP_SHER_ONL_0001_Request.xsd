@@ -134,14 +134,24 @@
     								</sequence>
     							</complexType>
     						</element>
+    						<element name="file" minOccurs="0"
+    							maxOccurs="1">
+    							<complexType>
+    								<sequence>
+    									<element name="mimeType"
+    										type="string">
+    									</element>
+    								</sequence>
+    							</complexType>
+    						</element>
     						<element name="fileSystemInfo">
     							<complexType>
     								<sequence>
     									<element name="createdDateTime"
     										type="string">
     									</element>
-    									<element name="lastModifiedDateTime"
-    										type="string">
+    									<element
+    										name="lastModifiedDateTime" type="string">
     									</element>
     								</sequence>
     							</complexType>
@@ -154,9 +164,6 @@
     									</element>
     								</sequence>
     							</complexType>
-    						</element>
-    						<element name="searchResult" minOccurs="0" maxOccurs="1">
-    							<complexType></complexType>
     						</element>
     					</sequence>
     				</complexType>
