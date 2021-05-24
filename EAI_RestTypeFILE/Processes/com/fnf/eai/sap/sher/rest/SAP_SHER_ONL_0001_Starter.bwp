@@ -1185,7 +1185,7 @@
                                     <value
                                     endTime="2021-03-25T11:21:06.665+0900"
                                     intervalUnit="Hour"
-                                    startTime="2021-03-25T03:30:00.000+0900"
+                                    startTime="2021-05-24T10:00:00.000+0900"
                                     timeInterval="1" xsi:type="generalactivities:Timer"/>
                                 </properties>
                             </activityConfig>
