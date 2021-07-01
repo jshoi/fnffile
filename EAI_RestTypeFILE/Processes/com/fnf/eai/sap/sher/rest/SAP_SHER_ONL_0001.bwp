@@ -2023,8 +2023,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexToGlobal="false" tibex:xpdlId="70e80a96-325f-4682-806a-ca8f9d3b577e">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="70e80a96-325f-4682-806a-ca8f9d3b577e">
                 <bpws:targets>
                     <bpws:target linkName="FTPDirToIterate"/>
                 </bpws:targets>
